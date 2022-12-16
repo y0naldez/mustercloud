@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+
+
+  <ul>
+
+    <li><a href="#section1">Iniciar sesion</a> </li>
+        <li><a href="#section2">Usuarios </a></li>
+            <li><a href="#section3">Artistas</a> </li>
+                <li><a href="#section4">Canciones</a> </li>
+                    <li><a href="#section5">Musica programada </a></li>
+                    <li><a href="#section12">Carga Podcast</a></li>
+                    <li><a href="#section6">Musica </a></li>
+                    <li><a href="#section7">Playlist </a></li>
+                    <li><a href="#section8">Artistas </a></li>
+                    <li><a href="#section9">Amigos </a></li>
+                    <li><a href="#section10">Bloqueados</a></li>
+                    <li><a href="#section11">Podcast</a></li>
+</ul>
+
+
+    <section id="section1">
+
+        <h2>section1</h2>
+
+        <div class="formularioIniciarSesion" >
+            <form id="formSesion">
+              <h1>INICIAR SESIÓN</h1>
+        
+              <div class="registro">
+                <input id="username2" name="username2" type="text" placeholder="usuario">
+                <label >Usuario</label>
+              </div>
+        
+              <div class="registro">
+                <input id="password2" name="password2" type="password" placeholder="contraseña">
+                <label >Contraseña</label>
+              </div>
+    
+              <button class="botones" type="button" id="btnSesion" onclick="login()">Iniciar sesión</button>
+              <br></br>
+              
+              <br></br>
+            </form>
+            <button class="botones4" onclick=" return logout()">CERRAR SESION</button>
+        </div>
+
+        <div class="formularioRegistro">
+            <form id="formRegistro">
+                <h1>REGISTRARSE</h1>
+          
+                <div class="registro">
+                  <input id="username" name="username" type="text" placeholder="usuario">
+                  <label >Usuario</label>
+                </div>
+          
+                <div class="registro">
+                  <input id="name" name="name" type="text" placeholder="nombre">
+                  <label >Nombre</label>
+                </div>
+      
+                <div class="registro">
+                  <input id="dpi"  name="dpi" type="text" placeholder="dpi">
+                  <label >DPI</label>
+                </div>
+      
+                <div class="registro">
+                  <input id="phone"  name="phone" type="text" placeholder="telefono">
+                  <label >Telefono</label>
+                </div>
+      
+                <div class="registro">
+                  <input id="password"  name="password" type="password" placeholder="contraseña">
+                  <label >Contraseña</label>
+                </div>
+                
+                <button class="botones" type="button" id="btnRegistro" onclick="listaUsuarios.registrar()">Registrarse</button>
+                
+                <br></br>
+                
+              </form>
+              
+        </div>
+    </section>
+    <section id="section2">
+        
+        <div id="CargaUsuarios">
+
+            <h1>Carga masiva de Usuarios</h1>
+                <form id="formularioCargaDeUsuarios">
+                    <div class="form-group">
+                    <label for="exampleFormControlFile1">Json de los usuarios</label>
+                    <input type="file" class="form-control-file" id="jsonusuarios">
+                    </div>
+                </form>
+                <button class="botones" onclick="listaUsuarios.graficarlista()">Actualizar grafico</button>
+                
+                <br></br>
+                
+                
+                <div id="lienzo" ></div>
+                
+            
+          </div>
+          
+      
+        
+    </section>
+    <section id="section3">
+        
+        <div id="CargaArtistas">
+
+            <h1>Carga masiva de Artistas</h1>
+      
+      
+                <form>
+                    <div class="form-group">
+                    <label for="exampleFormControlFile1">Json de los artistas</label>
+                    <input type="file" class="form-control-file" id="jsonartistas">
+                    </div>
+                </form>
+                <button class="botones" onclick="listaArtistas.graficarListaDeListas()">Actualizar grafico</button>
+                <br></br>
+
+                <div class="center" id="lienzo2" ></div>
+                
+            
+          </div>
+
+    </section>
+    <section id="section4">
+        
+        <div id="CargaCanciones">
+
+            <h1>Carga masiva de canciones</h1>
+      
+      
+                <form>
+                    <div class="form-group">
+                    <label for="exampleFormControlFile1">Json de las canciones</label>
+                    <input type="file" class="form-control-file" id="jsoncanciones">
+                    </div>
+                </form>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <div class="center" id="lienzo2" ></div>
+                
+            
+          </div>
+
+    </section>
+    <section id="section5">
+        <div id="CargaMusicaProgramada">
+
+            <h1>Carga masiva de musica programada</h1>
+      
+      
+                <form>
+                    <div class="form-group">
+                    <label for="exampleFormControlFile1">Json de la musica programda</label>
+                    <input type="file" class="form-control-file" id="jsonMusicaProgramada">
+                    </div>
+                </form>
+                
+                
+                <button class="botones" onclick="matrizDispersa.recorrerMatriz();">Actualizar grafico</button>
+                <br></br>
+                <div class="center" id="lienzoMusicaProgramada" ></div>
+               
+          </div>
+    </section>
+
+    <section id="section6">
+
+        <div id="publicarCancionUsuario">
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <form class="formMusicaProgramada" id="formMusicaProgramada">
+                
+                <h1>Publicar una cancion</h1>
+        
+                <div class="registro">
+                <input id="nombreArtista" name="nombreArtista" type="text" placeholder="Artista">
+                <label >Artista</label>
+                </div>
+        
+                <div class="registro">
+                <input id="nombreCancion" name="nombreCancion" type="text" placeholder="Nombre canción">
+                <label >Nombre canción</label>
+                </div>
+
+                <div class="registro">
+                <input id="nombreAlbum" name="nombreAlbum" type="text" placeholder="Nombre album">
+                <label >Album</label>
+                </div>
+
+                <div class="registro">
+                <input id="dia" name="dia" type="text" placeholder="dia">
+                <input id="mes" name="mes" type="text" placeholder="mes">
+                <input id="anio" name="anio" type="text" placeholder="año">
+                </div>
+            </form> 
+            <button class="botones2" onclick="return publicarInmediatamente()">Publicar</button>
+            <br></br>
+            <button class="botones2" onclick="return publicarProgramado()">Programar publicacion</button>
+            <br></br>
+            <button class="botones2" onclick="matrizDispersa.recorrerMatriz();">Actualizar grafico</button>
+            <br></br>
+            <div class="center" id="lienzoMusicaProgramada2" ></div>
+            <br></br>
+        </div>
+        <br></br>
+    </section>
+
+    <section id="section7">
+        <br></br>
+        <br></br>
+        <br></br>
+        
+
+        <div id="listaCanciones">
+            <h1>Ver musica de los artistas</h1>  
+            <button class="botones" onclick="borrarOptionsPlaylist();listaArtistas.mostrarArtistas();listaArtistas.enviarArtistas()">Mostrar artistas</button>
+            <select id="selectArtistas">
+                    
+            </select>
+            <br></br>   
+            <div id="listaResultadoCanciones">
+                <br></br>
+                <input type="text" name="result" id="result">
+                <br></br>
+                <button class="botones" onclick="agregarOptionPlaylist();cancionActual()">Agregar a la playlist</button>
+                <input id="mostrarCancionActual"></input>
+                <button onclick="siguienteCancion()" id="next">Siguiente</button>
+                <button onclick="anteriorCancion()" id="previus">Anterior</button>
+            </div>
+
+            <br></br>
+            <h1>PLAYLIST</h1>
+            <div id="divPlaylist">
+            <button class="botones2" onclick="playlist.graficarlistaCircular()">Actualizar playlist</button>
+            <br></br>
+            <div class="center" id="lienzoPlaylist" ></div>
+
+            </div>
+        </div>
+
+    </section>
+    <section id="section8">
+        
+        <div id="ApartadoCanciones">
+            <h1>visualizar todos los artistas con sus respectivas canciones</h1>
+            <button class="botones" onclick="listaArtistas.graficarListaDeListas()">Actualizar grafico</button>
+            <br></br>
+            <button class="botones" onclick="listaArtistas.ordenarAscendente();alert('ORDENADO DE MANERA ASCENDENTE')">Ordenar ascendente</button>
+            <br></br>
+            <button class="botones" onclick="listaArtistas.ordenar2();alert('ORDENADO DE MANERA DESCENDENTE')">Ordenar descendente</button>
+            <br></br>
+            <div class="center" id="lienzoArtista2" ></div>
+        </div>
+        <br></br>
+    </section>
+    <br></br>
+    <br></br>
+    <section id="section9">
+        
+    <div id="UsuarioApatadoAmigos">
+        <div id="amigos">
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <h1>AÑADIR AMIGOS</h1>
+            <div id="listaUsuarios">
+                <form id = "formListaUsuarios">
+                    <select id="selectUsuarios">
+                    
+                    </select>
+                </form>
+                <br></br>
+                <button class="botones3" onclick="borrarOptionsListaUsuarios();listaUsuarios.mostrarUsuarios();listaUsuarios.enviarUsuarios()">Mostrar usuarios</button>
+                <br></br>
+                
+                
+            </div>
+
+            <div id="listaResultadoUsuarios">
+                <input type="text" name="resultUsuarios" id="resultUsuarios">
+                <button class="botones3" onclick="agregarOptionPila()">Agregar amigo</button> 
+
+                <button class="botones3" onclick="agregarOptionColaBloqueo();colaBloqueos.graficarCola()">Bloquear usuario</button>
+                
+                <button class="botones3" onclick="desbloquearUsuarioCola();colaBloqueos.graficarCola()">Desbloquear usuario</button>
+            </div>
+            <br></br>
+            <div id="listaAmigos">
+                
+                
+                <form id = "formAmigos">
+                <select id="selectAmigos">
+                    
+                </select>
+                <br></br>
+                </form>
+                <br></br>
+                <button class="botones3" onclick="borrarOptionsListaAmigos();pilaAmigos.mostrarAmigos();pilaAmigos.enviarAmigos()">Mostrar amigos</button>
+                <br></br> 
+                
+            </div>
+        
+            
+        
+            <div id="listaResultadoAmigos">
+                <br></br>
+                <input type="text" name="resultAmigos" id="resultAmigos">
+                <button class="botones3" onclick="eliminarAmigo()">Eliminar amigo</button>
+                <br></br>
+
+                <div id="divPla">
+                    <button class="botones3" onclick="pilaAmigos.graficarpila()">Mostrar pila amigos</button>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <div class="center" id="lienzoAmigos" ></div>
+                    <br></br>
+                </div>
+
+            </div>
+        
+            
+        </div>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+    </div>
+    </section>
+    <br></br>
+    <br></br>
+    <section id="section10">
+        
+        
+
+        <div id="divCola">
+        <h1>BLOQUEADOS</h1>
+        <button class="botones2" onclick="colaBloqueos.graficarCola()">Mostrar cola bloqueos</button>
+        <br></br>
+        <br></br>
+        <div class="center" id="lienzoBloqueo" ></div>
+        <br></br>
+        <br></br>
+        
+
+        </div>
+
+    </section>
+    <section id="section11">
+        <br></br>
+        <div id="apartadoPodcast"> 
+            <div class="podcast" id="podcast">
+                <form id="formPodcast">
+                    <h1>PODCAST</h1>
+                    <div class="registro">
+                    <input id="namePodcast" name="namePodcast" type="text" placeholder="Nombre Podcast">
+                    <label >Podcast</label>
+                    </div>
+                    <div class="registro">
+                    <input id="temaPodcast" name="temaPodcast" type="text" placeholder="Tema Podcast">
+                    <label >Tema Podcast</label>
+                    </div class="registro">
+                    <div class="registro">
+                    <input id="invitadosPodcast" name="invitadosPodcast" type="text" placeholder="Invitados Podcast">
+                    <label >Invitados Podcast</label>
+                    </div>
+                    <div class="registro">
+                    <input id="durationPodcast" name="durationPodcast" type="text" placeholder="Duración Podcast">
+                    <label >Duración Podcast</label>
+                    </div>
+                    
+                    <button class="botones4" type="button" id="enviarArbol" onclick=" return arbolPodcast.enviarNombreArbol()">Publicar podcast</button>
+                    <br></br>
+                    
+                </form>
+                <br></br>
+                <button class="botones4" onclick="arbolPodcast.graficarArbol()">Mostrar arbol</button>
+            </div>
+            <br></br>
+            <br></br>
+            <br></br>
+            <div class="center" id="lienzoPodcast" ></div>
+        </div>
+        
+    </section>
+
+    <section id="section12">
+
+        <div id="CargaPodcast">
+
+            <h1>Carga masiva de podcast</h1>
+      
+      
+                <form>
+                    <div class="form-group">
+                    <label for="exampleFormControlFile1">Json de podcast</label>
+                    <input type="file" class="form-control-file" id="jsonpodcast">
+                    </div>
+                    <button class="botones2" onclick="arbolPodcast.graficarArbol()">Actualizar grafico</button>
+                </form>
+                
+                
+                <br></br>
+                <div class="center" id="lienzoPodcast2" ></div>
+                <br></br>
+                <br></br>
+          </div>
+
+    </section>
+
+
+    
+
+    <script src="//d3js.org/d3.v5.min.js"></script>
+    <script src="https://unpkg.com/@hpcc-js/wasm@0.3.11/dist/index.min.js"></script>
+    <script src="https://unpkg.com/d3-graphviz@3.0.5/build/d3-graphviz.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script>
+      const form = document.getElementById("formRegistro");
+      let usuariosFormData = new FormData(form); 
+      //showDivIniciales();
+    </script>
+
+
+
+    
+</body>
+</html>
